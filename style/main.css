@@ -1,0 +1,267 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Helvetica";
+  }
+  
+  html,
+  body {
+    height: 100vh;    
+  }
+  
+  .wrap-app {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;        
+  }
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 25px 10px 25px;
+    background-color: rgb(15, 140, 6);
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+  }
+  #add-item:hover{
+    cursor: pointer;
+    font-size: 18px;
+    color:yellow;
+  }
+  
+  .content {
+    flex: 1;
+  }
+  
+  .items {
+    padding: 10px 20px 10px 20px;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;    
+  }
+  .col-name{
+    position: relative;
+  }
+  .red-line{
+    display: none;
+    position:absolute;
+    width: 180%;
+    height: 2px;
+    left: 50%;
+    top:40%;
+    background-color: red;
+    transform: translate(-50%,-50%);
+
+  }
+  .col-price {
+    position: relative;
+  }
+  .col-price{
+    width: 200px;
+    height: 25px;    
+  }
+  .col-price .label-first-price {
+    position: absolute;
+    left: -27px;
+    top: -10px;
+    color: rgb(130, 130, 130);
+    font-size: 11px;
+  }
+  .col-price .label-real-price {
+    position: absolute;
+    bottom: -5px;
+    color: black;
+    font-size: 17px;
+    font-weight: bolder;
+  }
+  .under-price{
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;  
+    width: 65%;
+    padding-right: 10px; 
+  
+  }
+  .under-price .label-real-price {
+    color: rgb(80, 80, 80);
+    font-size: 14px;
+  }
+  .under-price > i {
+    font-size: 15px;
+  }
+  
+  li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 7px;
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px dashed rgb(100, 100, 100);    
+    font-size: 14px;
+  }
+
+  .fa-sharp{color:#480af5}
+  li:hover {
+    background-color: rgb(223, 235, 237);
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #4310eb;
+    border-radius: 5px;
+  }
+  
+  .content {
+    height: auto;
+    overflow: scroll;
+    /* Apenas para criar a rolagem */
+  }
+  
+  .pannel-price {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    border-top: 1px solid red;
+  }
+  
+  .pannel-price label {
+    font-size: 12px;
+    color: rgb(100, 100, 100);
+  }
+  .overlay, .overlay-atualizar{
+    display: none;
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(100, 100, 100,0.5);
+    z-index: 999;    
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .overlay-atualizar .form-atualizar{
+    width: 80%;
+    max-width: 400px;
+  }
+  .show-modal{
+    display: flex;
+  }
+  .hide-modal{
+    display: none;
+  }
+  
+  form{
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    padding:15px;
+    background-color: white;
+    border:5px solid black;
+    border-radius: 15px;  
+  }
+  .side-by-side{
+    display: flex;
+    justify-content: row;    
+  }
+  .circle-x{
+    position:absolute;
+    top:-2px;
+    right: -2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border:1px solid black;
+    background-color: #3a04b8;
+    color:white;
+    transform: translate(30%,-30%);
+  }
+  .circle-x:hover{
+    cursor: pointer;
+    color: yellow;
+    font-weight: bolder;
+    width: 28px;
+    height: 28px;
+  }
+  .wrap-input{
+    width: 100%;    
+  }
+  .wrap-input label{
+    font-size: 10px;
+    color:rgb(50,50,50);
+  }
+  .wrap-input input{
+    width: 100%;
+    padding:5px;
+    outline: none;
+    border-radius: 5px;
+    margin-bottom: 7px;
+  }
+  .mic{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color:#480af5;
+    margin-left: 10px;
+    border:2px solid #3a04b8;
+    color:greenyellow;
+    color:white;
+    transition:all 0.25s ease; 
+  }
+
+  .mic i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);        
+    font-size: 15px;    
+  }
+  .mic:hover{
+    cursor: pointer;
+  }
+
+  .btn-positive{
+    padding:5px;
+    color:white;
+    background-color: rgb(15, 140, 6);
+    font-size: 10px;
+  }
+  .btn-positive:hover{
+    background-color: rgb(2, 107, 11);
+    color:yellow;
+    cursor: pointer;
+  }
+  .footer {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(15, 140, 6);
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+  }
