@@ -47,7 +47,11 @@
     width: 100%;    
   }
   .col-name{
-    position: relative;
+    position: relative;    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 30%;
   }
   .red-line{
     display: none;
@@ -107,7 +111,7 @@
     padding: 5px;
     cursor: pointer;
     border-bottom: 1px dashed rgb(100, 100, 100);    
-    font-size: 14px;
+    font-size: 14px;    
   }
 
   .fa-sharp{color:#480af5}
@@ -264,4 +268,10 @@
     text-align: center;
     color: white;
     font-weight: bolder;
+  }
+
+  @media screen and (max-width: 500px) {
+    .col-price{      
+      width: 170px;
+    }
   }
