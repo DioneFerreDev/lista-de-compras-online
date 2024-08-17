@@ -20,7 +20,7 @@
         </header>
 
         <div class="overlay-atualizar">
-            <form class="form-atualizar" style="padding: 20px;">
+            <form id="form-atualizar" class="form-atualizar" style="padding: 20px;">
                 <div class='circle-x' onClick="hideModal()">x</div>
                 <div class="wrap-input">
                     <label>PRODUTO</label>
@@ -51,7 +51,12 @@
                 <div class='circle-x' onClick="hideModal()">x</div>
                 <div class='wrap-input'>
                     <label>Produto</label>
-                    <input type="text" id="product-name" placeholder='Nome do Produto' />
+                    <div class="side-by-side">
+                        <input type="text" id="product-name" placeholder='Nome do Produto' />
+                        <div class="mic product-name-mic">
+                            <i class="fa-solid fa-microphone phone-product-name"></i>                        
+                        </div>
+                    </div>
                 </div>
                 <div class='wrap-input'>
                     <label>Preço estimado</label>

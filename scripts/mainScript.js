@@ -51,10 +51,44 @@ function audio() {
     let isRecord = false;
     const recognition = new webkitSpeechRecognition();
     recognition.lang = 'pt-BR';
-    recognition.continuous = false
+    recognition.continuous = false;
 
+
+    // adicionar
+    const producNametMic = document.querySelector(".product-name-mic");
+    producNametMic.addEventListener('click', e => {
+        if (!isRecord) {
+            producNametMic.style.borderRadius = "50%"
+            producNametMic.style.color = "greenyellow";
+            let transcript = null;
+
+            if (!('webkitSpeechRecognition' in window)) {
+                alert("Seu navegador não suporta a API")
+                return
+            }
+
+            recognition.onend = () => {
+                producNametMic.style.borderRadius = "5px";
+                producNametMic.style.color = "white";
+            }
+
+            recognition.onresult = e => {                
+                transcript = e.results[0][0].transcript;
+                document.getElementById('product-name').value = transcript                
+            }
+            recognition.start();
+        } else {
+            producNametMic.style.borderRadius = "5px";
+            producNametMic.style.color = "white";
+            recognition.stop()
+        }
+        isRecord = !isRecord
+    })
+
+
+
+    // atualizar
     const productMic = document.querySelector(".product-mic");
-
     productMic.addEventListener('click', e => {
 
         if (!isRecord) {
@@ -74,8 +108,7 @@ function audio() {
 
             recognition.onresult = e => {                
                 transcript = e.results[0][0].transcript
-                document.getElementById('product').value = transcript
-                alert(transcript)
+                document.getElementById('product').value = transcript                
             }
             recognition.start();
         } else {
@@ -97,6 +130,8 @@ function functionHeader() {
 function hideModal() {
     document.querySelector(".overlay").style.display = "none";
     document.querySelector(".overlay-atualizar").style.display = "none";
+    new resetarForm("product-form");
+    new resetarForm("form-atualizar");
 }
 function addAction(e) {
     const product = document.getElementById("product-name").value;
@@ -146,7 +181,7 @@ function editProduct(id) {
     inputTemporario.mask("#.##0,00", { reverse: true });
     inputTemporario.val(item.realPrice);
     item.realPrice = inputTemporario.val();
-    console.log(item.realPrice)
+    if(item.realPrice == 0) item.realPrice =  ""
     const overlay = document.querySelector(".overlay-atualizar");
     overlay.style.display = "flex";
     document.getElementById("product").value = item.name;

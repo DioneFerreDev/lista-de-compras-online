@@ -30,7 +30,12 @@ class ReorganizarAlfabeticamente {
 
         return items
     }
-
+}
+class resetarForm {
+    constructor(formID) {
+        let form = document.getElementById(formID);
+        form.reset();
+    }
 }
 
 
