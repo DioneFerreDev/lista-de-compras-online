@@ -192,6 +192,7 @@ function editProduct(id) {
 function atualizar() {
     const name = document.getElementById("product").value;
     let realPrice = document.getElementById("real-price").value;
+    if(realPrice === "") realPrice = "0";
 
     const itemString = document.getElementById("hidden-product").value;
     const itemObj = JSON.parse(itemString);
