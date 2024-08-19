@@ -62,7 +62,6 @@
     top:40%;
     background-color: red;
     transform: translate(-50%,-50%);
-
   }
   .col-price {
     position: relative;
@@ -152,7 +151,7 @@
     font-size: 12px;
     color: rgb(100, 100, 100);
   }
-  .overlay, .overlay-atualizar{
+  .overlay, .overlay-atualizar, .overlay-settings{
     display: none;
     position:absolute;
     top:0;
@@ -164,6 +163,11 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+  }
+  .overlay-settings{
+    display: none;
+    background-color: white;
+    align-items:center;
   }
   .overlay-atualizar .form-atualizar{
     width: 80%;
@@ -262,16 +266,117 @@
     cursor: pointer;
   }
   .footer {
+    display: flex;
     width: 100%;
     padding: 10px;
-    background-color: rgb(15, 140, 6);
-    text-align: center;
+    background-color: rgb(15, 140, 6);    
     color: white;
     font-weight: bolder;
+    justify-content:space-between;
+    align-items: center;
+    border:1px solid rgb(8, 83, 2);
+  }
+  .footer h3{
+    font-size: 15px;  
+  }
+  .footer i{
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .footer i:hover{
+    color:yellow;
+  }
+  /* overlay settings */ 
+  .pannel-settings{
+    display: relative;
+    width: 100%;
+    max-width: 600px;
+  }
+  .wrap-turn-list{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border:1px solid black;
+    border-radius: 15px;
+    padding: 7px;    
+    margin-bottom: 10px;
+  }
+  .wrap-turn-list .explanation{
+    width: 70%;
+    padding:5px;
+  }
+  .wrap-turn-list .explanation h3{
+    font-size: 12px;
+    width: 70%;
+  }
+  .wrap-turn-list .explanation p{
+    font-size: 10px;
+    text-align: left;
+    margin-top: 7px;    
+  }
+  .wrap-turn-list .wrap-btn-conv-price .border-btn{ 
+    position:relative;
+    width: 70px;
+    height: 35px;
+    border-radius: 35px;
+    border:1px solid #133b91;    
+    background-color: #231e8f;
+    transition: all 0.25s ease;
+  }
+  .border-btn .circle-btn{
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-100%,-50%);
+    border-radius: 50%;
+    border: 1px solid #05024d;    
+    background-color: #dfe6f5;
+    transition:all 0.25s ease;
+  }
+  .title-ask{
+    padding: 10px;
+  }
+  .border-btn:hover{
+    cursor: pointer;
+  }
+  .wrap-circle-x{
+    position:absolute ;
+    top:15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 15px;
+    color:red;
+    border:2px solid red;
+    background-color: white;
+  }
+  .wrap-circle-x:hover{
+    cursor: pointer;
+    border:3px solid red;
+    font-weight: bolder;
+  }
+  .wrap-circle-x h3{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
   }
 
   @media screen and (max-width: 500px) {
     .col-price{      
       width: 170px;
+    }
+    .col-price .label-real-price {
+      font-size: 14px;
+      font-weight: bolder;
+    }
+    .col-price .label-real-price {
+      left: -8px;
+    }
+    .under-price > i {
+      font-size: 13px;
     }
   }
